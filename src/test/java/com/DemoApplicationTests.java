@@ -2,6 +2,7 @@ package com;
 
 import com.mapper.UserMapper;
 import com.model.User;
+import com.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,10 +16,10 @@ import java.util.List;
 class DemoApplicationTests {
 
     @Autowired
-    UserMapper userMapper;
+    UserService userService;
     @Test
     void getUserTest(){
-        List<User> userList = userMapper.getUser();
+        List<User> userList = userService.getUser();
         for (User user : userList) {
             System.out.println(user);
         }
