@@ -1,0 +1,45 @@
+#语法结构：key：空格 value
+
+#字符串默认不用加引号
+#name: 肖文强
+
+#对象、Map（键值对）    行内写法 student: { name: qinjiang,age: 3 }
+user:
+  id: 1   #${random.uuid}
+  username: 小乖
+  password: 123456
+
+#数组（ List、set ）    行内写法 pets: [cat,dog,pig]
+#pets:
+#  - cat
+#  - dog
+#  - pig
+
+#yml可以不用创建多个配置文件，实现多套环境
+#默认环境配置
+spring:
+  profiles:
+    active: dev   #激活开发环境配置
+  datasource:
+    username: root
+    password: forever210
+    url: jdbc:mysql://cdb-2kxl7eco.cd.tencentcdb.com:10097/mybatis?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    type: com.alibaba.druid.pool.DruidDataSource
+
+
+
+
+
+
+
+
+
+
+---
+spring:
+  profiles: test  #测试环境
+
+---
+spring:
+  profiles: dev #开发环境
